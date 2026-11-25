@@ -18,6 +18,7 @@ class TareasPage extends StatefulWidget {
 
 class _TareasPageState extends State<TareasPage> {
   final TextEditingController _tituloController = TextEditingController();
+  final FocusNode _tituloFocus = FocusNode();
 
   StreamSubscription<List<Tarea>>? _suscripcion;
   List<Tarea> _tareas = [];
@@ -78,6 +79,8 @@ class _TareasPageState extends State<TareasPage> {
   Future<void> _agregarTarea() async {
     final ok = await _ejecutar(() => _repo.agregar(_tituloController.text));
     if (ok) _tituloController.clear();
+    // Mantiene el cursor en el campo para capturar varias tareas seguidas.
+    _tituloFocus.requestFocus();
   }
 
   Future<void> _alternarCompletada(Tarea tarea, bool completada) async {
@@ -109,6 +112,7 @@ class _TareasPageState extends State<TareasPage> {
   void dispose() {
     _suscripcion?.cancel();
     _tituloController.dispose();
+    _tituloFocus.dispose();
     super.dispose();
   }
 
@@ -123,6 +127,7 @@ class _TareasPageState extends State<TareasPage> {
           children: [
             TextField(
               controller: _tituloController,
+              focusNode: _tituloFocus,
               maxLength: TareasRepository.longitudMaxima,
               textInputAction: TextInputAction.done,
               onSubmitted: (_) => _agregarTarea(),
