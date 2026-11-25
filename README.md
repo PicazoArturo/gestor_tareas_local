@@ -66,7 +66,7 @@ test/
 Requisitos: Flutter 3.47.x estable (probado con 3.47.7 / Dart 3.13.5).
 
 ```bash
-git clone <URL-de-este-repo>
+git clone https://github.com/PicazoArturo/gestor_tareas_local.git
 cd gestor_tareas_local
 flutter pub get
 flutter analyze
@@ -126,5 +126,3 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer flutter run -d macos
 | Móvil (Android, emulador API 37) | P1–P5 ✅ |
 | Escritorio (macOS 26.6) | P1–P5 ✅ |
 | iOS, Windows, Linux | Previstas (mismo código), no ejecutadas |
-
-Detalle y evidencias en [`docs/PRUEBAS.md`](docs/PRUEBAS.md).
