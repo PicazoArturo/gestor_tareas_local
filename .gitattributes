@@ -1,0 +1,9 @@
+# Estadísticas de lenguaje de GitHub: contar solo el código Dart propio.
+web/drift_worker.js linguist-generated
+lib/**/*.g.dart linguist-generated
+android/** linguist-vendored
+ios/** linguist-vendored
+macos/** linguist-vendored
+linux/** linguist-vendored
+windows/** linguist-vendored
+web/index.html linguist-vendored
