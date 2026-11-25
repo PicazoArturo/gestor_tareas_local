@@ -1,5 +1,5 @@
-/// Modelo inicial de tarea. No contiene código de SQLite.
-/// Investiga cómo representar estos campos en una tabla persistente.
+/// Modelo que usa la interfaz. Es independiente de Drift: el repositorio
+/// convierte cada fila de la tabla `tareas` en un objeto [Tarea].
 class Tarea {
   final int id;
   final String titulo;
